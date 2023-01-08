@@ -1,0 +1,10 @@
+.conda/
+.ipynb_checkpoints/
+.params.yaml.swp
+Link.txt
+logs.log
+preprocessing.ipynb
+modelling_3.ipynb
+production_model.pkl
+catboost_info/
+test_data.txt
