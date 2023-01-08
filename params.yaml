@@ -1,0 +1,44 @@
+dataset_dir: C:\Users\ASUS\Documents\PACMANN\project\Auto Insurance Claims Data\dataset\
+datetime_columns:
+- policy_bind_date
+- incident_date
+int32_col:
+- months_as_customer
+- age
+- policy_number
+- policy_deductable
+- policy_annual_premium
+- umbrella_limit
+- insured_zip
+- capital-gains
+- capital-loss
+- incident_hour_of_the_day
+- number_of_vehicles_involved
+- bodily_injuries
+- witnesses
+- total_claim_amount
+- injury_claim
+- property_claim
+- vehicle_claim
+- auto_year
+object_columns:
+- policy_state
+- policy_csl
+- insured_sex
+- insured_education_level
+- insured_occupation
+- insured_hobbies
+- insured_relationship
+- incident_type
+- collision_type
+- incident_severity
+- authorities_contacted
+- incident_state
+- incident_city
+- incident_location
+- property_damage
+- police_report_available
+- auto_make
+- auto_model
+- fraud_reported
+label: fraud_reported

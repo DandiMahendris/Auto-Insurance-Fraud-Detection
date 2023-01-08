@@ -1,0 +1,416 @@
+# Path related
+raw_dataset_dir: data\dataset\
+raw_dataset_path: data\processed\raw_dataset.pkl
+cleaned_raw_dataset_path: data\processed\raw_dataset.pkl
+train_set_path:
+- data/processed/x_train.pkl
+- data/processed/y_train.pkl
+valid_set_path:
+- data/processed/x_valid.pkl
+- data/processed/y_valid.pkl
+test_set_path:
+- data/processed/x_test.pkl
+- data/processed/y_test.pkl
+train_set_clean:
+- data/processed/x_train_clean.pkl
+- data/processed/y_train_clean.pkl
+valid_set_clean:
+- data/processed/x_valid_clean.pkl
+- data/processed/y_valid_clean.pkl
+test_set_clean:
+- data/processed/x_test_clean.pkl
+- data/processed/y_test_clean.pkl
+
+training_log_path: log/training_log.json
+production_model_path: models/production_model.pkl
+ohe_path: models/ohe_stasiun.pkl
+le_path: models/le_encoder.pkl
+le_label_path : models/le_label.pkl
+
+# Debug related
+print_debug: true
+
+datetime_columns:
+- policy_bind_date
+- incident_date
+
+int32_col:
+- months_as_customer
+- age
+- policy_number
+- policy_annual_premium
+- insured_zip
+- capital_gains
+- capital_loss
+- incident_hour_of_the_day
+- total_claim_amount
+- injury_claim
+- property_claim
+- vehicle_claim
+
+object_columns:
+- policy_state
+- policy_csl
+- policy_deductable
+- umbrella_limit
+- insured_sex
+- insured_hobbies
+- incident_type
+- collision_type
+- incident_severity
+- authorities_contacted
+- incident_state
+- incident_city
+- incident_location
+- number_of_vehicles_involved
+- property_damage
+- bodily_injuries
+- witnesses
+- auto_year
+- police_report_available
+- auto_make
+- auto_model
+- fraud_reported
+
+int32_predictor:
+- months_as_customer
+- age
+- policy_number
+- policy_annual_premium
+- insured_zip
+- capital_gains
+- capital_loss
+- incident_hour_of_the_day
+- total_claim_amount
+- injury_claim
+- property_claim
+- vehicle_claim
+
+object_predictor:
+- policy_deductable
+- umbrella_limit
+- number_of_vehicles_involved
+- bodily_injuries
+- witnesses
+- auto_year
+- policy_state
+- policy_csl
+- insured_sex
+- insured_hobbies
+- incident_type
+- collision_type
+- incident_severity
+- authorities_contacted
+- incident_state
+- incident_city
+- property_damage
+- police_report_available
+- auto_make
+- auto_model
+
+label : fraud_reported
+predictor:
+- months_as_customer
+- age
+- policy_number
+- policy_annual_premium
+- insured_zip
+- capital_gains
+- capital_loss
+- incident_hour_of_the_day
+- total_claim_amount
+- injury_claim
+- property_claim
+- vehicle_claim
+- policy_deductable
+- umbrella_limit
+- number_of_vehicles_involved
+- bodily_injuries
+- witnesses
+- auto_year
+- policy_state
+- policy_csl
+- insured_sex
+- insured_hobbies
+- incident_type
+- collision_type
+- incident_severity
+- authorities_contacted
+- incident_state
+- incident_city
+- property_damage
+- police_report_available
+- auto_make
+- auto_model
+
+api_predictor:
+- policy_bind_date
+- incident_date
+- months_as_customer
+- age
+- policy_number
+- policy_annual_premium
+- insured_zip
+- capital_gains
+- capital_loss
+- incident_hour_of_the_day
+- total_claim_amount
+- injury_claim
+- property_claim
+- vehicle_claim
+- policy_deductable
+- umbrella_limit
+- number_of_vehicles_involved
+- bodily_injuries
+- witnesses
+- auto_year
+- policy_state
+- policy_csl
+- insured_sex
+- insured_hobbies
+- incident_type
+- collision_type
+- incident_severity
+- authorities_contacted
+- incident_state
+- incident_city
+- property_damage
+- police_report_available
+- auto_make
+- auto_model
+
+model_params_path:
+- data/model_params/class_weight.pkl
+- data/model_params/decision_tree.pkl
+- data/model_params/random_forest.pkl
+- data/model_params/adaboost.pkl
+- data/model_params/gradient_boosting.pkl
+- data/model_params/xgboost.pkl
+- data/model_params/xgboost2.pkl
+
+# range of data related
+months_as_customer:
+- -1
+- 500
+age:
+- 19
+- 65
+policy_number:
+- 100000
+- 999999
+policy_annual_premium:
+- 400
+- 2500
+insured_zip:
+- 430000
+- 630000
+capital_gains:
+- -1
+- 150000
+capital_loss:
+- -120000
+- 1
+incident_hour_of_the_day:
+- -1
+- 23
+total_claim_amount:
+- 99
+- 120000
+injury_claim:
+- -1
+- 25000
+property_claim:
+- -1
+- 25000
+vehicle_claim:
+- 0
+- 80000
+policy_deductable:
+- '500'
+- '1000'
+- '2000'
+umbrella_limit:
+- '0'
+- '1000000'
+- '2000000'
+- '3000000'
+- '4000000'
+- '5000000'
+- '6000000'
+- '7000000'
+- '8000000'
+- '9000000'
+- '10000000'
+number_of_vehicles_involved:
+- '1'
+- '2'
+- '3'
+- '4'
+bodily_injuries:
+- '0'
+- '1'
+- '2'
+witnesses:
+- '0'
+- '1'
+- '2'
+- '3'
+auto_year:
+- '1995'
+- '1999'
+- '2005'
+- '2006'
+- '2011'
+- '2007'
+- '2003'
+- '2009'
+- '2010'
+- '2013'
+- '2002'
+- '2015'
+- '1997'
+- '2012'
+- '2008'
+- '2014'
+- '2001'
+- '2000'
+- '1998'
+- '2004'
+- '1996'
+policy_state:
+- 'OH'
+- 'IL'
+- 'IN'
+policy_csl:
+- '250/500'
+- '100/300'
+- '500/1000'
+insured_sex:
+- 'FEMALE'
+- 'MALE'
+insured_hobbies:
+- 'reading'
+- 'exercise'
+- 'paintball'
+- 'bungie-jumping'
+- 'movies'
+- 'golf'
+- 'camping'
+- 'kayaking'
+- 'yachting'
+- 'hiking'
+- 'video-games'
+- 'skydiving'
+- 'base-jumping'
+- 'board-games'
+- 'polo'
+- 'chess'
+- 'dancing'
+- 'sleeping'
+- 'cross-fit'
+- 'basketball'
+incident_type:
+- 'Multi-vehicle Collision'
+- 'Single Vehicle Collision'
+- 'Vehicle Theft'
+- 'Parked Car'
+collision_type:
+- 'Rear Collision'
+- 'Side Collision'
+- 'Front Collision'
+- '?'
+incident_severity:
+- 'Minor Damage'
+- 'Total Loss'
+- 'Major Damage'
+- 'Trivial Damage'
+authorities_contacted:
+- 'Police'
+- 'Fire'
+- 'Other'
+- 'Ambulance'
+- 'None'
+incident_state:
+- 'NY'
+- 'SC'
+- 'WV'
+- 'VA'
+- 'NC'
+- 'PA'
+- 'OH'
+incident_city:
+- 'Springfield'
+- 'Arlington'
+- 'Columbus'
+- 'Northbend'
+- 'Hillsdale'
+- 'Riverwood'
+- 'Northbrook'
+property_damage:
+- '?'
+- 'NO'
+- 'YES'
+police_report_available:
+- '?'
+- 'NO'
+- 'YES'
+auto_make:
+- 'Saab'
+- 'Dodge'
+- 'Suburu'
+- 'Nissan'
+- 'Chevrolet'
+- 'Ford'
+- 'BMW'
+- 'Toyota'
+- 'Audi'
+- 'Accura'
+- 'Volkswagen'
+- 'Jeep'
+- 'Mercedes'
+- 'Honda'
+auto_model:
+- 'RAM'
+- 'Wrangler'
+- 'A3'
+- 'Neon'
+- 'MDX'
+- 'Jetta'
+- 'Passat'
+- 'A5'
+- 'Legacy'
+- 'Pathfinder'
+- 'Malibu'
+- '92x'
+- 'Camry'
+- 'Forrestor'
+- 'F150'
+- '95'
+- 'E400'
+- '93'
+- 'Grand Cherokee'
+- 'Escape'
+- 'Tahoe'
+- 'Maxima'
+- 'Ultima'
+- 'X5'
+- 'Highlander'
+- 'Civic'
+- 'Silverado'
+- 'Fusion'
+- 'ML350'
+- 'Impreza'
+- 'Corolla'
+- 'TL'
+- 'CRV'
+- 'C300'
+- '3 Series'
+- 'X6'
+- 'M5'
+- 'Accord'
+- 'RSX'
+
+
+label_categories:
+- 'FRAUD'
+- 'TIDAK FRAUD'
