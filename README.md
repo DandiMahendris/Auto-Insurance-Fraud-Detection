@@ -35,8 +35,6 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
   width="350" height="420">
 </p>
 
-Kaggle provided dataset of Auto Insurance Claim contains 1000 rows and 40 columns shape with unbalanced dataset (75%-25%).
-
 2. Data Preprocessing and Feature Engineering
 
 <p align="center">
@@ -58,9 +56,19 @@ SimpleImputer(missing_values = np.nan,
                                 fill_value = 'UNKNOWN')
 ```
 
-And for categorical data using `OneHotEncoder` and `LabelEncoder` from sklearn package.
-Next, cat and num data is concatenated to normalize the data. normalization data use `standardscaler` from sklearn package.
-This normalized data is concatenated with label data to balancing using `SMOTE` and `Oversampling`. However to capture benchmark of multiple ML models, we also use unbalanced dataset as nonbalancing.
+And for categorical data using `OneHotEncoder` and `OrdinalEncoder` from sklearn package.
+```
+OneHotEncoder(handle_unknown = 'ignore',
+                                drop = 'if_binary')
+```
+```
+OrdinalEncoder(categories=[incident_type,witnesses,incident_severity,auto_year,
+                                   umbrella_limit,bodily_injuries,number_of_vehicles_involved])
+```
+
+Next, cat and num data is concatenated to normalize the data. normalization method uses `standardscaler` from sklearn package.
+
+This normalized data is concatenated with label(y) to be balanced using `SMOTE` and `Oversampling`. However, to capture benchmark of multiple ML models, we also use unbalanced dataset as **nonbalancing**.
 
 3. Data Modelling
 
