@@ -27,7 +27,7 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
 
 ### Working with data
 
-1. Data Preparation
+1. **Data Preparation**
 
 <p align="center">
 <img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png"
@@ -35,7 +35,7 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
   width="350" height="420">
 </p>
 
-2. Data Preprocessing and Feature Engineering
+2. **Data Preprocessing and Feature Engineering**
 
 <p align="center">
 <img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preprocessing%20Diagram.png"
@@ -45,23 +45,23 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
 
 Data separated into **predictor(X)** and **label(y)**. Numerical and categorical type of data in predictor is splitted and both missing value is handled using `SimpleImputer`
 
-```
+>```
 SimpleImputer(missing_values = np.nan,
                                 strategy = "median")
 ```
 
-```
+>```
 SimpleImputer(missing_values = np.nan,
                                 strategy = 'constant',
                                 fill_value = 'UNKNOWN')
 ```
 
 And for categorical data using `OneHotEncoder` and `OrdinalEncoder` from sklearn package.
-```
+>```
 OneHotEncoder(handle_unknown = 'ignore',
                                 drop = 'if_binary')
 ```
-```
+>```
 OrdinalEncoder(categories=[incident_type,witnesses,incident_severity,auto_year,
                                    umbrella_limit,bodily_injuries,number_of_vehicles_involved])
 ```
@@ -70,7 +70,7 @@ Next, cat and num data is concatenated to normalize the data. normalization meth
 
 This normalized data is concatenated with label(y) to be balanced using `SMOTE` and `Oversampling`. However, to capture benchmark of multiple ML models, we also use unbalanced dataset as **nonbalancing**.
 
-3. Data Modelling
+3. **Data Modelling**
 
 <p align="center">
 <img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Modelling%20Diagram.png"
