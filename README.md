@@ -17,7 +17,7 @@ This research goal is to build binary classifier model which are able to separat
 <p align="center">
 <img src="https://miro.medium.com/max/824/1*xMl_wkMt42Hy8i84zs2WGg.png"
   alt="Size Limit comment in pull request about bundle size changes"
-  width="500" height="250">
+  width="500" height="300">
 </p>
 
 Precision is the rate of true positives divided by the sum of true positives and false positives. Recall is the number of true positives divided by the sum of true positives and false negatives.
@@ -32,7 +32,7 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
 <p align="center">
 <img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png"
   alt="Size Limit comment in pull request about bundle size changes"
-  width="300" height="459">
+  width="300" height="420">
 </p>
 
 Kaggle provided dataset of Auto Insurance Claim contains 1000 rows and 40 columns shape with unbalanced dataset (75%-25%).
@@ -42,5 +42,5 @@ Kaggle provided dataset of Auto Insurance Claim contains 1000 rows and 40 column
 <p align="center">
 <img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preprocessing%20Diagram.png"
   alt="Size Limit comment in pull request about bundle size changes"
-  width="500" height="359">
+  width="500" height="450">
 </p>
