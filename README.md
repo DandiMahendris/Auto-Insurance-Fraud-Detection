@@ -45,16 +45,22 @@ Kaggle provided dataset of Auto Insurance Claim contains 1000 rows and 40 column
   width="500" height="550">
 </p>
 
-Data separated into **predictor(X)** and **label(y)**. Numerical and categorical type of data in predictor is splitted and both missing value is handled using **SimpleImputer**
+Data separated into **predictor(X)** and **label(y)**. Numerical and categorical type of data in predictor is splitted and both missing value is handled using `SimpleImputer`
 
-```SimpleImputer(missing_values = np.nan,
+```
+SimpleImputer(missing_values = np.nan,
                                 strategy = "median")
 ```
 
-```SimpleImputer(missing_values = np.nan,
+```
+SimpleImputer(missing_values = np.nan,
                                 strategy = 'constant',
                                 fill_value = 'UNKNOWN')
-``` 
+```
+
+And for categorical data using `OneHotEncoder` and `LabelEncoder` from sklearn package.
+Next, cat and num data is concatenated to normalize the data. normalization data use `standardscaler` from sklearn package.
+This normalized data is concatenated with label data to balancing using `SMOTE` and `Oversampling`. However to capture benchmark of multiple ML models, we also use unbalanced dataset as nonbalancing.
 
 3. Data Modelling
 
