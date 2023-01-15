@@ -32,7 +32,7 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
 <p align="center">
 <img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png"
   alt="Size Limit comment in pull request about bundle size changes"
-  width="300" height="420">
+  width="350" height="420">
 </p>
 
 Kaggle provided dataset of Auto Insurance Claim contains 1000 rows and 40 columns shape with unbalanced dataset (75%-25%).
@@ -45,12 +45,21 @@ Kaggle provided dataset of Auto Insurance Claim contains 1000 rows and 40 column
   width="500" height="550">
 </p>
 
-Data separated into **predictor(X)** and **label(y)**. numerical and categorical type of data in predictor is splitted and both missing value handled.
+Data separated into **predictor(X)** and **label(y)**. Numerical and categorical type of data in predictor is splitted and both missing value is handled using **SimpleImputer**
+
+```SimpleImputer(missing_values = np.nan,
+                                strategy = "median")
+```
+
+```SimpleImputer(missing_values = np.nan,
+                                strategy = 'constant',
+                                fill_value = 'UNKNOWN')
+``` 
 
 3. Data Modelling
 
 <p align="center">
 <img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Modelling%20Diagram.png"
   alt="Size Limit comment in pull request about bundle size changes"
-  width="600" height="580">
+  width="680" height="580">
 </p>
