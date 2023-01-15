@@ -42,5 +42,15 @@ Kaggle provided dataset of Auto Insurance Claim contains 1000 rows and 40 column
 <p align="center">
 <img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preprocessing%20Diagram.png"
   alt="Size Limit comment in pull request about bundle size changes"
-  width="500" height="450">
+  width="500" height="550">
+</p>
+
+Data separated into **predictor(X)** and **label(y)**. numerical and categorical type of data in predictor is splitted and both missing value handled.
+
+3. Data Modelling
+
+<p align="center">
+<img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Modelling%20Diagram.png"
+  alt="Size Limit comment in pull request about bundle size changes"
+  width="600" height="580">
 </p>
