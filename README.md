@@ -14,10 +14,10 @@ This research goal is to build binary classifier model which are able to separat
 
 **Precision** and **recall** should be chosen as the one of the evaluation metrics in classification models.
 
-<p align="center">
-<img src="https://miro.medium.com/max/824/1*xMl_wkMt42Hy8i84zs2WGg.png"
-  alt="Size Limit comment in pull request about bundle size changes"
-  width="500" height="300">
+<p align=center>
+<img src=https://miro.medium.com/max/824/1*xMl_wkMt42Hy8i84zs2WGg.png
+  alt=Size Limit comment in pull request about bundle size changes
+  width=500 height=300>
 </p>
 
 Precision is the rate of true positives divided by the sum of true positives and false positives. Recall is the number of true positives divided by the sum of true positives and false negatives.
@@ -29,25 +29,25 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
 
 1. **Data Preparation**
 
-<p align="center">
-<img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png"
-  alt="Size Limit comment in pull request about bundle size changes"
-  width="350" height="420">
+<p align=center>
+<img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png
+  alt=Size Limit comment in pull request about bundle size changes
+  width=350 height=420>
 </p>
 
 2. **Data Preprocessing and Feature Engineering**
 
-<p align="center">
-<img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preprocessing%20Diagram.png"
-  alt="Size Limit comment in pull request about bundle size changes"
-  width="500" height="550">
+<p align=center>
+<img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preprocessing%20Diagram.png
+  alt=Size Limit comment in pull request about bundle size changes
+  width=500 height=550>
 </p>
 
 Data separated into **predictor(X)** and **label(y)**. Numerical and categorical type of data in predictor is splitted and both missing value is handled using `SimpleImputer`
 
 ```
 SimpleImputer(missing_values = np.nan,
-                                strategy = "median")
+                                strategy = median)
 ```
 
 ```
@@ -72,49 +72,49 @@ This normalized data is concatenated with label(y) to be balanced using `SMOTE` 
 
 3. **Data Modelling**
 
-<p align="center">
-<img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Modelling%20Diagram.png"
-  alt="Size Limit comment in pull request about bundle size changes"
-  width="680" height="580">
+<p align=center>
+<img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Modelling%20Diagram.png
+  alt=Size Limit comment in pull request about bundle size changes
+  width=680 height=580>
 </p>
 
 ### Prediction using API
 1. Data Input
 
-	"policy_bind_date": "yyyy-mm-dd", <br/>
-	"incident_date": "yyyy-mm-dd", <br/>
-	"months_as_customer": int, <br/>
-	"age": int, <br/>
-	"policy_number": int, <br/>
-	"policy_annual_premium": int, <br/>
-	"insured_zip": int, <br/>
-	"capital_gains": int, <br/>
-	"capital_loss": int, <br/>
-	"incident_hour_of_the_day": int, <br/>
-	"total_claim_amount": int, <br/>
-	"injury_claim": int, <br/>
-	"property_claim": int, <br/>
-	"vehicle_claim": int, <br/>
-	"policy_deductable": "str", <br/>
-	"umbrella_limit": "str", <br/>
-	"number_of_vehicles_involved": "str", <br/>
-	"bodily_injuries": "str", <br/>
-	"witnesses": "str", <br/>
-	"auto_year": "str", <br/>
-	"policy_state": "str", <br/>
-	"policy_csl": "str", <br/>
-	"insured_sex": "str", <br/>
-	"insured_hobbies": "str", <br/>
-	"incident_type": "str", <br/>
-	"collision_type": "str", <br/>
-	"incident_severity": "str", <br/>
-	"authorities_contacted": "str", <br/>
-	"incident_state": "str", <br/>
-	"incident_city": "str", <br/>
-	"property_damage": "str", <br/>
-	"police_report_available": "str",__
-	"auto_make": "str",__
-	"auto_model": "str"__
+	policy_bind_date: yyyy-mm-dd, <br/>
+	incident_date: yyyy-mm-dd, <br/>
+	months_as_customer: int, <br/>
+	age: int, <br/>
+	policy_number: int, <br/>
+	policy_annual_premium: int, <br/>
+	insured_zip: int, <br/>
+	capital_gains: int, <br/>
+	capital_loss: int, <br/>
+	incident_hour_of_the_day: int, <br/>
+	total_claim_amount: int, <br/>
+	injury_claim: int, <br/>
+	property_claim: int, <br/>
+	vehicle_claim: int, <br/>
+	policy_deductable: str, <br/>
+	umbrella_limit: str, <br/>
+	number_of_vehicles_involved: str, <br/>
+	bodily_injuries: str, <br/>
+	witnesses: str, <br/>
+	auto_year: str, <br/>
+	policy_state: str, <br/>
+	policy_csl: str, <br/>
+	insured_sex: str, <br/>
+	insured_hobbies: str, <br/>
+	incident_type: str, <br/>
+	collision_type: str, <br/>
+	incident_severity: str, <br/>
+	authorities_contacted: str, <br/>
+	incident_state: str, <br/>
+	incident_city: str, <br/>
+	property_damage: str, <br/>
+	police_report_available: str, <br/>
+	auto_make: str, <br/>
+	auto_model: str <br/>
 
 2. Format Message
 
