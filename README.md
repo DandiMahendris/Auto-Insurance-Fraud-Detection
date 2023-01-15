@@ -14,7 +14,11 @@ This research goal is to build binary classifier model which are able to separat
 
 **Precision** and **recall** should be chosen as the one of the evaluation metrics in classification models.
 
-![recall&precision](https://www.researchgate.net/publication/336402347/figure/fig3/AS:812472659349505@1570719985505/Calculation-of-Precision-Recall-and-Accuracy-in-the-confusion-matrix.ppm)
+<p align="center">
+<img src="https://miro.medium.com/max/824/1*xMl_wkMt42Hy8i84zs2WGg.png"
+  alt="Size Limit comment in pull request about bundle size changes"
+  width="289" height="200">
+</p>
 
 Precision is the rate of true positives divided by the sum of true positives and false positives. Recall is the number of true positives divided by the sum of true positives and false negatives.
 A high recall indicates the model is able to classify relevant (positive) results without mislabeling them as irrelevant (negative). On the other hand, high precision indicates the model is able to returned positives predicted values is correctly positives with low irrelevant results (incorrectly positives).
@@ -25,5 +29,8 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
 
 1. Data Preparation
 
-![data preparation](https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png)
-
+<p align="center">
+<img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png"
+  alt="Size Limit comment in pull request about bundle size changes"
+  width="200" height="289">
+</p>
