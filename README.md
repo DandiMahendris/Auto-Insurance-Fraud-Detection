@@ -45,23 +45,23 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
 
 Data separated into **predictor(X)** and **label(y)**. Numerical and categorical type of data in predictor is splitted and both missing value is handled using `SimpleImputer`
 
->```
+```
 SimpleImputer(missing_values = np.nan,
                                 strategy = "median")
 ```
 
->```
+```
 SimpleImputer(missing_values = np.nan,
                                 strategy = 'constant',
                                 fill_value = 'UNKNOWN')
 ```
 
 And for categorical data using `OneHotEncoder` and `OrdinalEncoder` from sklearn package.
->```
+```
 OneHotEncoder(handle_unknown = 'ignore',
                                 drop = 'if_binary')
 ```
->```
+```
 OrdinalEncoder(categories=[incident_type,witnesses,incident_severity,auto_year,
                                    umbrella_limit,bodily_injuries,number_of_vehicles_involved])
 ```
@@ -77,3 +77,49 @@ This normalized data is concatenated with label(y) to be balanced using `SMOTE` 
   alt="Size Limit comment in pull request about bundle size changes"
   width="680" height="580">
 </p>
+
+### Prediction using API
+1. Data Input
+>
+{
+  "policy_bind_date": "yyyy-mm-dd",
+  "incident_date": "yyyy-mm-dd",
+  "months_as_customer": int,
+  "age": int,
+  "policy_number": int,
+  "policy_annual_premium": int,
+  "insured_zip": int,
+  "capital_gains": int,
+  "capital_loss": int,
+  "incident_hour_of_the_day": int,
+  "total_claim_amount": int,
+  "injury_claim": int,
+  "property_claim": int,
+  "vehicle_claim": int,
+  "policy_deductable": "str",
+  "umbrella_limit": "str",
+  "number_of_vehicles_involved": "str",
+  "bodily_injuries": "str",
+  "witnesses": "str",
+  "auto_year": "str",
+  "policy_state": "str",
+  "policy_csl": "str",
+  "insured_sex": "str",
+  "insured_hobbies": "str",
+  "incident_type": "str",
+  "collision_type": "str",
+  "incident_severity": "str",
+  "authorities_contacted": "str",
+  "incident_state": "str",
+  "incident_city": "str",
+  "property_damage": "str",
+  "police_report_available": "str",
+  "auto_make": "str",
+  "auto_model": "str"
+}
+
+2. Format Message
+
+>
+python ./src/api.py
+
