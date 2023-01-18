@@ -23,7 +23,7 @@
     <li>
       <a href="#prediction-using-api-and-streamlit">Prediction using API and Streamlit</a>
       <ul>
-        <li><a href="#how-to-run-by-api-?">How To Run by API?</a></li>
+        <li><a href="#how-to-run-by-api?">How To Run by API?</a></li>
         <li><a href="#data-input">Data Input</a></li>
       </ul>
     </li>
@@ -37,7 +37,7 @@
 <p align=center>
 <img src=https://blog.privy.id/wp-content/uploads/2022/11/shutterstock_720284965-1-300x173.jpg
   alt=Size Limit comment in pull request about bundle size changes
-  width=600 height=350>
+  width=550 height=320>
 </p>
 
 <!-- Business Objective -->
@@ -63,7 +63,7 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
 <p align=center>
 <img src=https://www.mathworks.com/help//examples/nnet/win64/CompareDeepLearningModelsUsingROCCurvesExample_01.png
   alt=Size Limit comment in pull request about bundle size changes
-  width=500 height=420>
+  width=400 height=350>
 </p>
 
 **AUC Score** is also another consideration to choose the best model. <br/>
