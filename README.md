@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 <!-- About The Project -->
 ### Username / discourseID
 --------- dandi-p4Gx --------------
@@ -32,7 +34,11 @@
 ## About the Project
 ## Auto Insurance Fraud Detection
 
-![auto insurance claims](https://blog.privy.id/wp-content/uploads/2022/11/shutterstock_720284965-1-300x173.jpg)
+<p align=center>
+<img src=https://blog.privy.id/wp-content/uploads/2022/11/shutterstock_720284965-1-300x173.jpg
+  alt=Size Limit comment in pull request about bundle size changes
+  width=700 height=400>
+</p>
 
 <!-- Business Objective -->
 ## Business Objective
