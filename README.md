@@ -2,15 +2,44 @@
 ### Username / discourseID
 --------- dandi-p4Gx --------------
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#business-objective">About The Project</a></li>
+    <li><a href="#business-metrics">About The Project</a></li>
+    <li><a href="#getting-started">About The Project</a></li>
+    <li>
+      <a href="#working-with-data">Getting Started</a>
+      <ul>
+        <li><a href="#data-preparation">Prerequisites</a></li>
+        <li><a href="#data-preprocessing-and-feature-engineering">Installation</a></li>
+	<li><a href="#data-modelling">Prerequisites</a></li>      
+      </ul>
+    </li>
+    <li>
+      <a href="#prediction-using-api-and-streamlit">Getting Started</a>
+      <ul>
+        <li><a href="#how-to-run-by-api-?">Prerequisites</a></li>
+        <li><a href="#data-input">Installation</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>
+
+<!-- About the Project -->
 ## About the Project
-# Auto Insurance Fraud Detection
+## Auto Insurance Fraud Detection
 
 ![auto insurance claims](https://blog.privy.id/wp-content/uploads/2022/11/shutterstock_720284965-1-300x173.jpg)
 
-### Business Objective
+<!-- Business Objective -->
+## Business Objective
 This research goal is to build binary classifier model which are able to separate fraud transactions from non-fraud transactions. We present our conclusions based on an empirical study comparing different ML models and classification metrics.
 
-### Business Metrics
+<!-- Business Metrics -->
+## Business Metrics
 
 **Precision** and **recall** should be chosen as the one of the evaluation metrics in classification models.
 
@@ -25,9 +54,23 @@ A high recall indicates the model is able to classify relevant (positive) result
 
 Recall score with low False Negative and high False Positive Rate in AUC score should be parameter to select best model.
 
-### Working with data
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-1. **Data Preparation**
+<!-- GETTING STARTED -->
+## Getting Started
+
+1. Clone the repository
+```sh
+git clone https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection.git`
+```
+2. Install requirement library and package on `requirements.txt`
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- WORKING WITH DATA -->
+# Data Workflow
+
+### Data Preparation
 
 <p align=center>
 <img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png
@@ -35,7 +78,7 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
   width=350 height=420>
 </p>
 
-2. **Data Preprocessing and Feature Engineering**
+### Data Preprocessing and Feature Engineering
 
 <p align=center>
 <img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preprocessing%20Diagram.png
@@ -70,7 +113,7 @@ Next, cat and num data is concatenated to normalize the data. normalization meth
 
 This normalized data is concatenated with label(y) to be balanced using `SMOTE` and `Oversampling`. However, to capture benchmark of multiple ML models, we also use unbalanced dataset as **nonbalancing**.
 
-3. **Data Modelling**
+### Data Modelling
 
 <p align=center>
 <img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Modelling%20Diagram.png
@@ -78,53 +121,64 @@ This normalized data is concatenated with label(y) to be balanced using `SMOTE` 
   width=680 height=580>
 </p>
 
-### Prediction using API
-1. **Data Input**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-	policy_bind_date: yyyy-mm-dd, <br/>
-	incident_date: yyyy-mm-dd, <br/>
-	months_as_customer: int, <br/>
-	age: int, <br/>
-	policy_number: int, <br/>
-	policy_annual_premium: int, <br/>
-	insured_zip: int, <br/>
-	capital_gains: int, <br/>
-	capital_loss: int, <br/>
-	incident_hour_of_the_day: int, <br/>
-	total_claim_amount: int, <br/>
-	injury_claim: int, <br/>
-	property_claim: int, <br/>
-	vehicle_claim: int, <br/>
-	policy_deductable: str, <br/>
-	umbrella_limit: str, <br/>
-	number_of_vehicles_involved: str, <br/>
-	bodily_injuries: str, <br/>
-	witnesses: str, <br/>
-	auto_year: str, <br/>
-	policy_state: str, <br/>
-	policy_csl: str, <br/>
-	insured_sex: str, <br/>
-	insured_hobbies: str, <br/>
-	incident_type: str, <br/>
-	collision_type: str, <br/>
-	incident_severity: str, <br/>
-	authorities_contacted: str, <br/>
-	incident_state: str, <br/>
-	incident_city: str, <br/>
-	property_damage: str, <br/>
-	police_report_available: str, <br/>
-	auto_make: str, <br/>
-	auto_model: str <br/>
+<!-- Prediction Using API and Streamlit -->
 
-#### **How To Run by API?**
+## Prediction using API and Streamlit
+### How To Run by API?
 
-First, git fetch data and cd to this code directory.
-try this code below
+> 1. Make sure you have **Git** installed as well. If not, search for "How to install git on Windows/Ubuntu/Os that you used."
 
-> python .\src\api.py
+> 2. Make a clone of this repository or download files on this repository:
+`git clone https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection.git` 
 
-### Prediction using Streamlit
+> 3. Open a CMD terminal and navigate to the cloned folder's directory. Try to test API by following the code below:
+`python .\src\api.py`
 
-#### **How To Run by Streamlit?**
+> 4. To try streamlit. Open CMD terminal and type the code below:
+`streamlit run .\src\streamlit.py`
 
-> streamlit run .\src\streamlit.py
+### Data Input
+
+Input Api uses json format like this:
+```JSON
+{
+  "policy_bind_date": "yyyy-mm-dd",
+  "incident_date": "yyyy-mm-dd",
+  "months_as_customer": int,
+  "age": int,
+  "policy_number": int,
+  "policy_annual_premium": int,
+  "insured_zip": int,
+  "capital_gains": int,
+  "capital_loss": int,
+  "incident_hour_of_the_day": int,
+  "total_claim_amount": int,
+  "injury_claim": int,
+  "property_claim": int,
+  "vehicle_claim": int,
+  "policy_deductable": "str",
+  "umbrella_limit": "str",
+  "number_of_vehicles_involved": "str",
+  "bodily_injuries": "str",
+  "witnesses": "str",
+  "auto_year": "str",
+  "policy_state": "str",
+  "policy_csl": "str",
+  "insured_sex": "str",
+  "insured_hobbies": "str",
+  "incident_type": "str",
+  "collision_type": "str",
+  "incident_severity": "str",
+  "authorities_contacted": "str",
+  "incident_state": "str",
+  "incident_city": "str",
+  "property_damage": "str",
+  "police_report_available": "str",
+  "auto_make": "str",
+  "auto_model": "str"
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
