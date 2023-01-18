@@ -7,22 +7,22 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#business-objective">About The Project</a></li>
-    <li><a href="#business-metrics">About The Project</a></li>
-    <li><a href="#getting-started">About The Project</a></li>
+    <li><a href="#business-objective">Business Objective</a></li>
+    <li><a href="#business-metrics">Business Metrics</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
     <li>
-      <a href="#working-with-data">Getting Started</a>
+      <a href="#data-workflow">Data Workflow</a>
       <ul>
-        <li><a href="#data-preparation">Prerequisites</a></li>
-        <li><a href="#data-preprocessing-and-feature-engineering">Installation</a></li>
-	<li><a href="#data-modelling">Prerequisites</a></li>      
+        <li><a href="#data-preparation">Data Preparation</a></li>
+        <li><a href="#data-preprocessing-and-feature-engineering">Data Preprocessing and Feature Engineering</a></li>
+	<li><a href="#data-modelling">Data Modelling</a></li>      
       </ul>
     </li>
     <li>
-      <a href="#prediction-using-api-and-streamlit">Getting Started</a>
+      <a href="#prediction-using-api-and-streamlit">Prediction using API and Streamlit</a>
       <ul>
-        <li><a href="#how-to-run-by-api-?">Prerequisites</a></li>
-        <li><a href="#data-input">Installation</a></li>
+        <li><a href="#how-to-run-by-api-?">How To Run by API?</a></li>
+        <li><a href="#data-input">Data Input</a></li>
       </ul>
     </li>
   </ol>
@@ -67,10 +67,10 @@ git clone https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection.git`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- WORKING WITH DATA -->
+<!-- Data Workflow -->
 # Data Workflow
 
-### Data Preparation
+## Data Preparation
 
 <p align=center>
 <img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png
@@ -78,7 +78,7 @@ git clone https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection.git`
   width=350 height=420>
 </p>
 
-### Data Preprocessing and Feature Engineering
+## Data Preprocessing and Feature Engineering
 
 <p align=center>
 <img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preprocessing%20Diagram.png
@@ -113,7 +113,7 @@ Next, cat and num data is concatenated to normalize the data. normalization meth
 
 This normalized data is concatenated with label(y) to be balanced using `SMOTE` and `Oversampling`. However, to capture benchmark of multiple ML models, we also use unbalanced dataset as **nonbalancing**.
 
-### Data Modelling
+## Data Modelling
 
 <p align=center>
 <img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Modelling%20Diagram.png
@@ -133,10 +133,10 @@ This normalized data is concatenated with label(y) to be balanced using `SMOTE` 
 > 2. Make a clone of this repository or download files on this repository:
 `git clone https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection.git` 
 
-> 3. Open a CMD terminal and navigate to the cloned folder's directory. Try to test API by following the code below:
+> 3. Open a CMD terminal and navigate to the cloned folder's directory. Try to test API by following the code:
 `python .\src\api.py`
 
-> 4. To try streamlit. Open CMD terminal and type the code below:
+> 4. To try streamlit. Open CMD terminal and type the code:
 `streamlit run .\src\streamlit.py`
 
 ### Data Input
