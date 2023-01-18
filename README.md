@@ -3,7 +3,7 @@
 --------- dandi-p4Gx --------------
 
 ## About the Project
-### Auto Insurance Fraud Detection
+# Auto Insurance Fraud Detection
 
 ![auto insurance claims](https://blog.privy.id/wp-content/uploads/2022/11/shutterstock_720284965-1-300x173.jpg)
 
@@ -79,7 +79,7 @@ This normalized data is concatenated with label(y) to be balanced using `SMOTE` 
 </p>
 
 ### Prediction using API
-1. Data Input
+1. **Data Input**
 
 	policy_bind_date: yyyy-mm-dd, <br/>
 	incident_date: yyyy-mm-dd, <br/>
@@ -116,7 +116,15 @@ This normalized data is concatenated with label(y) to be balanced using `SMOTE` 
 	auto_make: str, <br/>
 	auto_model: str <br/>
 
-2. Format Message
+#### **How To Run by API?**
 
-> python ./src/api.py
+First, git fetch data and cd to this code directory.
+try this code below
 
+> python .\src\api.py
+
+### Prediction using Streamlit
+
+#### **How To Run by Streamlit?**
+
+> streamlit run .\src\streamlit.py
