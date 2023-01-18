@@ -3,7 +3,7 @@ import requests
 from PIL import Image
 
 # Load and set images in the first place
-header_images = Image.open('assets/header_images.jpg')
+header_images = Image.open('assets/fraud_detect.jpg')
 st.image(header_images)
 
 # Add some information about the service
@@ -425,7 +425,7 @@ with st.form(key = "auto_insurance_data_form"):
 
         # Create loading animation while predicting
         with st.spinner("Sending data to prediction server ..."):
-        res = requests.post("http://api:8080/predict", json = raw_data).json()
+            res = requests.post("http://api:8080/predict", json = raw_data).json()
         
         # Parse the prediction result
         if res["error_msg"] != "":

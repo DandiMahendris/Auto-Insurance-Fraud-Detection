@@ -99,8 +99,19 @@ def predict(data: api_data):
 
     # 11. Standardize value of train data
     data_clean, scaler = preprocessing.standardizeData(data = data_concat)
+    
+    # 12. Load x_train variable to equalize new data len columns with model fit len columns
+    x_train, y_train = modelling.load_train_clean(config_data)
+    
+    # 13. Equalize the columns since OHE create 131 columns, with non existing value must have value = 0
+    
+    if len(data_clean.columns) != 131:
+        d_col = set(data_clean.columns).symmetric_difference(set(x_train['nonbalance'].columns))
+        
+        for col in d_col:
+            data_clean[col] = 0
 
-    # 12. Predict the data
+    # 13. Predict the data
     y_pred = model_data["model_data"]["model_object"].predict(data_clean)
 
     if y_pred[0] == 0:
