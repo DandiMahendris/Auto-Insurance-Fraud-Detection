@@ -1,8 +1,8 @@
-<a name="readme-top"></a>
-
 <!-- About The Project -->
 ### Username / discourseID
 --------- dandi-p4Gx --------------
+
+<a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -37,7 +37,7 @@
 <p align=center>
 <img src=https://blog.privy.id/wp-content/uploads/2022/11/shutterstock_720284965-1-300x173.jpg
   alt=Size Limit comment in pull request about bundle size changes
-  width=700 height=400>
+  width=600 height=350>
 </p>
 
 <!-- Business Objective -->
@@ -59,6 +59,16 @@ Precision is the rate of true positives divided by the sum of true positives and
 A high recall indicates the model is able to classify relevant (positive) results without mislabeling them as irrelevant (negative). On the other hand, high precision indicates the model is able to returned positives predicted values is correctly positives with low irrelevant results (incorrectly positives).
 
 Recall score with low False Negative and high False Positive Rate in AUC score should be parameter to select best model.
+
+<p align=center>
+<img src=https://www.mathworks.com/help//examples/nnet/win64/CompareDeepLearningModelsUsingROCCurvesExample_01.png
+  alt=Size Limit comment in pull request about bundle size changes
+  width=500 height=420>
+</p>
+
+**AUC Score** is also another consideration to choose the best model. <br/>
+ROC is an evaluation metric for binary classification problems and a probability curve that plots the **TPR** againts **FPR** at various threshold values. <br/>
+An excellent model has AUC near to the 1 which means it has a good measure of separability. A poor model has an AUC near 0 which means it has the worst measure of separability
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
