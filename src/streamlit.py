@@ -13,85 +13,103 @@ st.subheader("Just enter variabel below then click Predict button :sunglasses:")
 # Create form of input
 with st.form(key = "auto_insurance_data_form"):
     # Create box for number input
+    policy_bind_date = st.selectbox(
+        label = "When policy_bind_date is this data collected?",
+        options = (
+            "2014-10-17",
+            "2015-10-17",
+            "2017-10-17"
+        )
+    )
+    
+    incident_date = st.selectbox(
+        label = "From which incident_date is this data collected?",
+        options = (
+            "2015-01-25",
+            "2016-01-25",
+            "2017-01-25"
+        )
+    )
+    
     months_as_customer = st.number_input(
-        label = "2.\tEnter months_as_customer Value:",
-        min_value = -1,
+        label = "Enter months_as_customer Value:",
+        min_value = 0,
         max_value = 500,
         help = "Value range from 0 to 500"
     )
 
     age = st.number_input(
-        label = "2.\tEnter age Value:",
+        label = "Enter age Value:",
         min_value = 19,
         max_value = 65,
         help = "Value range from 19 to 65"
     )
 
     policy_number = st.number_input(
-        label = "2.\tEnter policy_number Value:",
+        label = "Enter policy_number Value:",
         min_value = 100000,
         max_value = 999999,
         help = "Value range from 100000 to 999999"
     )
 
     policy_annual_premium = st.number_input(
-        label = "2.\tEnter policy_annual_premium Value:",
+        label = "Enter policy_annual_premium Value:",
         min_value = 400,
         max_value = 2500,
         help = "Value range from 400 to 2500"
     )
 
     insured_zip = st.number_input(
-        label = "2.\tEnter insured_zip Value:",
+        label = "Enter insured_zip Value:",
         min_value = 430000,
         max_value = 630000,
         help = "Value range from 430000 to 630000"
     )
 
     capital_gains = st.number_input(
-        label = "2.\tEnter capital-gains Value:",
+        label = "Enter capital_gains Value:",
         min_value = 0,
         max_value = 150000,
         help = "Value range from 0 to 150000"
     )
 
     capital_loss = st.number_input(
-        label = "2.\tEnter capital-loss Value:",
+        label = "Enter capital_loss Value:",
         min_value = -120000,
         max_value = 0,
         help = "Value range from -120000 to 0"
     )
 
     incident_hour_of_the_day = st.number_input(
-        label = "2.\tEnter incident_hour_of_the_day Value:",
-        min_value = -1,
+        label = "Enter incident_hour_of_the_day Value:",
+        min_value = 0,
         max_value = 23,
         help = "Value range from 0 to 23"
     )
 
     total_claim_amount = st.number_input(
-        label = "2.\tEnter total_claim_amount Value:",
+        label = "Enter total_claim_amount Value:",
         min_value = 99,
         max_value = 120000,
         help = "Value range from 99 to 120000"
     )
 
     injury_claim = st.number_input(
-        label = "2.\tEnter injury_claim Value:",
-        min_value = -1,
+        label = "Enter injury_claim Value:",
+        min_value = 0,
         max_value = 25000,
         help = "Value range from 0 to 120000"
     )
 
     property_claim = st.number_input(
-        label = "2.\tEnter property_claim Value:",
-        min_value = -1,
+        label = "Enter property_claim Value:",
+        min_value = 0,
         max_value = 25000,
         help = "Value range from 0 to 120000"
     )
 
     vehicle_claim = st.number_input(
-        label = "2.\tEnter vehicle_claim Value:",
+        label = "Enter vehicle_claim Value:",
         min_value = 0,
         max_value = 80000,
         help = "Value range from 0 to 80000"
@@ -99,7 +117,7 @@ with st.form(key = "auto_insurance_data_form"):
 
     # Create select box input
     policy_deductable = st.selectbox(
-        label = "1.\tFrom which policy_deductable is this data collected?",
+        label = "From which policy_deductable is this data collected?",
         options = (
             "500",
             "1000",
@@ -108,7 +126,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     umbrella_limit = st.selectbox(
-        label = "1.\tFrom which umbrella_limit is this data collected?",
+        label = "From which umbrella_limit is this data collected?",
         options = (
             "0",
             "1000000",
@@ -125,7 +143,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     number_of_vehicles_involved = st.selectbox(
-        label = "1.\tFrom which number_of_vehicles_involved is this data collected?",
+        label = "From which number_of_vehicles_involved is this data collected?",
         options = (
             "1",
             "2",
@@ -135,7 +153,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     bodily_injuries = st.selectbox(
-        label = "1.\tFrom which bodily_injuries is this data collected?",
+        label = "From which bodily_injuries is this data collected?",
         options = (
             "0",
             "1",
@@ -144,7 +162,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     witnesses = st.selectbox(
-        label = "1.\tFrom which witnesses is this data collected?",
+        label = "From which witnesses is this data collected?",
         options = (
             "0",
             "1",
@@ -154,7 +172,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     auto_year = st.selectbox(
-        label = "1.\tFrom which auto_year is this data collected?",
+        label = "From which auto_year is this data collected?",
         options = (
             "1995",
             "1999",
@@ -181,7 +199,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     policy_state = st.selectbox(
-        label = "1.\tFrom which policy_state is this data collected?",
+        label = "From which policy_state is this data collected?",
         options = (
             "OH",
             "IL",
@@ -190,7 +208,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     policy_csl = st.selectbox(
-        label = "1.\tFrom which policy_csl is this data collected?",
+        label = "From which policy_csl is this data collected?",
         options = (
             "250/500",
             "100/300",
@@ -199,15 +217,15 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     insured_sex = st.selectbox(
-        label = "1.\tFrom which insured_sex is this data collected?",
+        label = "From which insured_sex is this data collected?",
         options = (
-            "FEMALE",
-            "MALE"
+            "MALE",
+            "FEMALE"
         )
     )
 
     insured_hobbies = st.selectbox(
-        label = "1.\tFrom which insured_hobbies is this data collected?",
+        label = "From which insured_hobbies is this data collected?",
         options = (
             "reading",
             "exercise",
@@ -233,7 +251,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     incident_type = st.selectbox(
-        label = "1.\tFrom which incident_type is this data collected?",
+        label = "From which incident_type is this data collected?",
         options = (
             "Multi-vehicle Collision",
             "Single Vehicle Collision",
@@ -243,7 +261,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     collision_type = st.selectbox(
-        label = "1.\tFrom which collision_type is this data collected?",
+        label = "From which collision_type is this data collected?",
         options = (
             "Rear Collision",
             "Side Collision",
@@ -253,7 +271,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     incident_severity = st.selectbox(
-        label = "1.\tFrom which incident_severity is this data collected?",
+        label = "From which incident_severity is this data collected?",
         options = (
             "Minor Damage",
             "Total Loss",
@@ -263,7 +281,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     authorities_contacted = st.selectbox(
-        label = "1.\tFrom which authorities_contacted is this data collected?",
+        label = "From which authorities_contacted is this data collected?",
         options = (
             "Police",
             "Fire",
@@ -274,7 +292,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     incident_state = st.selectbox(
-        label = "1.\tFrom which incident_state is this data collected?",
+        label = "From which incident_state is this data collected?",
         options = (
             "NY",
             "SC",
@@ -287,7 +305,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     incident_city = st.selectbox(
-        label = "1.\tFrom which incident_city is this data collected?",
+        label = "From which incident_city is this data collected?",
         options = (
             "Springfield",
             "Arlington",
@@ -300,25 +318,23 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     property_damage = st.selectbox(
-        label = "1.\tFrom which property_damage is this data collected?",
+        label = "From which property_damage is this data collected?",
         options = (
-            "UNKNOWN",
             "NO",
             "YES"
         )
     )
 
     police_report_available = st.selectbox(
-        label = "1.\tFrom which police_report_available is this data collected?",
+        label = "From which police_report_available is this data collected?",
         options = (
-            "UNKNOWN",
             "NO",
             "YES"
         )
     )
 
     auto_make = st.selectbox(
-        label = "1.\tFrom which auto_make is this data collected?",
+        label = "From which auto_make is this data collected?",
         options = (
             "Saab",
             "Dodge",
@@ -338,7 +354,7 @@ with st.form(key = "auto_insurance_data_form"):
     )
 
     auto_model = st.selectbox(
-        label = "1.\tFrom which auto_model is this data collected?",
+        label = "From which auto_model is this data collected?",
         options = (
             "RAM",
             "Wrangler",
@@ -389,43 +405,45 @@ with st.form(key = "auto_insurance_data_form"):
     if submitted:
         # Create dict of all data in the form
         raw_data = {
-            "months_as_customer": months_as_customer,
-            "age": age,
-            "policy_number": policy_number,
-            "policy_deductable": policy_deductable,
-            "policy_annual_premium": policy_annual_premium,
-            "umbrella_limit": umbrella_limit,
-            "insured_zip": insured_zip,
-            "capital-gains": capital_gains,
-            "capital-loss": capital_loss,
-            "incident_hour_of_the_day": incident_hour_of_the_day,
-            "number_of_vehicles_involved": number_of_vehicles_involved,
-            "bodily_injuries": bodily_injuries,
-            "witnesses": witnesses,
-            "total_claim_amount": total_claim_amount,
-            "injury_claim": injury_claim,
-            "property_claim": property_claim,
-            "vehicle_claim": vehicle_claim,
-            "auto_year": auto_year,
-            "policy_state": policy_state,
-            "policy_csl": policy_csl,
-            "insured_sex": insured_sex,
-            "insured_hobbies": insured_hobbies,
-            "incident_type": incident_type,
-            "collision_type": collision_type,
-            "incident_severity": incident_severity,
-            "authorities_contacted": authorities_contacted,
-            "incident_state": incident_state,
-            "incident_city": incident_city,
-            "property_damage": property_damage,
-            "police_report_available": police_report_available,
-            "auto_make": auto_make,
-            "auto_model": auto_model        
+              "policy_bind_date": policy_bind_date,
+              "incident_date": incident_date,
+              "months_as_customer": months_as_customer,
+              "age": age,
+              "policy_number": policy_number,
+              "policy_annual_premium": policy_annual_premium,
+              "insured_zip": insured_zip,
+              "capital_gains": capital_gains,
+              "capital_loss": capital_loss,
+              "incident_hour_of_the_day": incident_hour_of_the_day,
+              "total_claim_amount": total_claim_amount,
+              "injury_claim": injury_claim,
+              "property_claim": property_claim,
+              "vehicle_claim": vehicle_claim,
+              "policy_deductable": policy_deductable,
+              "umbrella_limit": umbrella_limit,
+              "number_of_vehicles_involved": number_of_vehicles_involved,
+              "bodily_injuries": bodily_injuries,
+              "witnesses": witnesses,
+              "auto_year": auto_year,
+              "policy_state": policy_state,
+              "policy_csl": policy_csl,
+              "insured_sex": insured_sex,
+              "insured_hobbies": insured_hobbies,
+              "incident_type": incident_type,
+              "collision_type": collision_type,
+              "incident_severity": incident_severity,
+              "authorities_contacted": authorities_contacted,
+              "incident_state": incident_state,
+              "incident_city": incident_city,
+              "property_damage": property_damage,
+              "police_report_available": police_report_available,
+              "auto_make": auto_make,
+              "auto_model": auto_model     
         }
 
         # Create loading animation while predicting
         with st.spinner("Sending data to prediction server ..."):
-            res = requests.post("http://api:8080/predict", json = raw_data).json()
+            res = requests.post("http://localhost:8080/predict", json = raw_data).json()
         
         # Parse the prediction result
         if res["error_msg"] != "":
