@@ -1,43 +1,48 @@
 <!-- About The Project -->
-### Username / discourseID
---------- dandi-p4Gx --------------
 
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#business-objective">Business Objective</a></li>
-    <li><a href="#business-metrics">Business Metrics</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
-    <li>
-      <a href="#data-workflow">Data Workflow</a>
-      <ul>
-        <li><a href="#data-preparation">Data Preparation</a></li>
-        <li><a href="#data-preprocessing-and-feature-engineering">Data Preprocessing and Feature Engineering</a></li>
-	<li><a href="#data-modelling">Data Modelling</a></li>      
-      </ul>
-    </li>
-    <li>
-      <a href="#prediction-using-api-and-streamlit">Prediction using API and Streamlit</a>
-      <ul>
-        <li><a href="#how-to-run-by-api?">How To Run by API?</a></li>
-        <li><a href="#data-input">Data Input</a></li>
-      </ul>
-    </li>
-  </ol>
-</details>
+
+<summary>Table of Contents</summary>
+<ol>
+  <li><a href="#about-the-project">About The Project</a></li>
+  <li><a href="#business-objective">Business Objective</a></li>
+  <li><a href="#business-metrics">Business Metrics</a></li>
+  <li><a href="#getting-started">Getting Started</a></li>
+  <li>
+    <a href="#data-workflow">Data Workflow</a>
+    <ul>
+      <li><a href="#data-preparation">Data Preparation</a></li>
+      <li><a href="#data-preprocessing-and-feature-engineering">Data Preprocessing and Feature Engineering</a></li>
+<li><a href="#data-modelling">Data Modelling</a></li>      
+    </ul>
+  </li>
+  <li>
+    <a href="#prediction-using-api-and-streamlit">Prediction using API and Streamlit</a>
+    <ul>
+      <li><a href="#how-to-run-by-api?">How To Run by API?</a></li>
+      <li><a href="#data-input">Data Input</a></li>
+    </ul>
+  </li>
+</ol>
 
 <!-- About the Project -->
 ## About the Project
 ## Auto Insurance Fraud Detection
 
 <p align=center>
-<img src="https://blog.privy.id/wp-content/uploads/2022/11/shutterstock_720284965-1-300x173.jpg"
+<img src="https://www.paulasmithinsurance.com/wp-content/uploads/2021/05/car-insurance-fraud-things-to-know-YI-1536x1024.jpg"
   width=550 height=320>
 </p>
+
+Frauds are known to be dynamic and have no patterns, hence they are not easy to identify. Amount claimed by fraudulent is significantly huge that may lead to serious loss of money. Such frauds occurred in all areas of insurance claim with high severity including auto sectors that widely claimed by fake accident claim. 
+
+The project applying multiple ML techniques to label and classify fraud claim. Before applying any ML model, we use exploratory data analysis to find how the categoric and numeric features relationship toward target (fraud classification), as well as **feature selection** are used such as ***Chi-squared test*, *Shapiro-Wilk*, *Probability Plot, Welch's Test, Person Correlation, Lasso* Method, *XGBoost* feature importance** and ***Random Forest* feature importance**.
+
+In preprocessing technique, dataset encountered with unpleasant task of high **imbalanced data** of fraud and non-fraud case. Hence, Oversampling and SMOTENC are applied toward dataset, and we will have 3 type of configuration data such as **Non-Balanced, *Oversampling*** and ***SMOTENC***.
+
+The datasets using Auto Insurance Industry and will approached the ***accuracy*, *precision*, *recall*** on ***confusion* *matrix*** and also the ***Area Under the ROC Curve (AUC)*** as the evaluation metrics that would be used.
 
 <!-- Business Objective -->
 ## Business Objective
@@ -54,7 +59,7 @@ This research goal is to build binary classifier model which are able to separat
   width=500 height=300>
 </p>
 
-Precision is the rate of true positives divided by the sum of true positives and false positives. Recall is the number of true positives divided by the sum of true positives and false negatives.
+**`Precision`** is the rate of true positives divided by the sum of true positives and false positives. **`Recall`** is the number of true positives divided by the sum of true positives and false negatives.
 A high recall indicates the model is able to classify relevant (positive) results without mislabeling them as irrelevant (negative). On the other hand, high precision indicates the model is able to returned positives predicted values is correctly positives with low irrelevant results (incorrectly positives).
 
 Recall score with low False Negative and high False Positive Rate in AUC score should be parameter to select best model.
@@ -66,7 +71,7 @@ Recall score with low False Negative and high False Positive Rate in AUC score s
 </p>
 
 **AUC Score** is also another consideration to choose the best model. <br/>
-ROC is an evaluation metric for binary classification problems and a probability curve that plots the **TPR** againts **FPR** at various threshold values. <br/>
+**`ROC`** is an evaluation metric for binary classification problems and a probability curve that plots the **TPR** againts **FPR** at various threshold values. <br/>
 An excellent model has AUC near to the 1 which means it has a good measure of separability. A poor model has an AUC near 0 which means it has the worst measure of separability
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -76,28 +81,43 @@ An excellent model has AUC near to the 1 which means it has a good measure of se
 
 1. Clone the repository
 ```sh
-git clone https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection.git`
+$ git clone https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection.git`
 ```
 2. Install requirement library and package on `requirements.txt`
+
+3. If you want to create the folder instead
+
+```sh
+$ mkdir folder
+$ git init
+```
+
+4. remote the repository
+```sh
+$ git remote add origin git@github.com:DandiMahendris/Auto-Insurance-Fraud-Detection.git
+$ git pull origin main
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Data Workflow -->
 # Data Workflow
 
+## Dataset
+
+Kaggle provided dataset of Auto Insurance Claim contains 1000 rows and 40 columns shape.
+
 ## Data Preparation
 
 <p align=center>
-<img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png
-  alt=Size Limit comment in pull request about bundle size changes
+<img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png"
   width=350 height=420>
 </p>
 
 ## Data Preprocessing and Feature Engineering
 
 <p align=center>
-<img src=https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preprocessing%20Diagram.png
-  alt=Size Limit comment in pull request about bundle size changes
+<img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preprocessing%20Diagram.png"
   width=500 height=550>
 </p>
 
@@ -159,40 +179,16 @@ This normalized data is concatenated with label(y) to be balanced using `SMOTE` 
 Input Api uses json format like this:
 ```JSON
 {
-  "policy_bind_date": "yyyy-mm-dd",
-  "incident_date": "yyyy-mm-dd",
-  "months_as_customer": int,
-  "age": int,
-  "policy_number": int,
-  "policy_annual_premium": int,
-  "insured_zip": int,
-  "capital_gains": int,
-  "capital_loss": int,
-  "incident_hour_of_the_day": int,
-  "total_claim_amount": int,
   "injury_claim": int,
   "property_claim": int,
   "vehicle_claim": int,
-  "policy_deductable": "str",
-  "umbrella_limit": "str",
-  "number_of_vehicles_involved": "str",
-  "bodily_injuries": "str",
-  "witnesses": "str",
-  "auto_year": "str",
-  "policy_state": "str",
-  "policy_csl": "str",
-  "insured_sex": "str",
   "insured_hobbies": "str",
   "incident_type": "str",
   "collision_type": "str",
   "incident_severity": "str",
   "authorities_contacted": "str",
   "incident_state": "str",
-  "incident_city": "str",
-  "property_damage": "str",
-  "police_report_available": "str",
-  "auto_make": "str",
-  "auto_model": "str"
+  "property_damage": "str"
 }
 ```
 
