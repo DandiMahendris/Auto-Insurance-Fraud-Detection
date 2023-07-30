@@ -13,6 +13,7 @@
   <li>
     <a href="#data-workflow">Data Workflow</a>
     <ul>
+      <li><a href='#dataset">Dataset</a></li>
       <li><a href="#data-preparation">Data Preparation</a></li>
       <li><a href="#data-preprocessing-and-feature-engineering">Data Preprocessing and Feature Engineering</a></li>
 <li><a href="#data-modelling">Data Modelling</a></li>      
@@ -107,12 +108,47 @@ $ git pull origin main
 
 Kaggle provided dataset of Auto Insurance Claim contains 1000 rows and 40 columns shape.
 
+| Column Name              | Describe                                      |
+| :----------------------- | :-------------------------------------------- |
+| *Policy_annual_premium*    | Amount of insured need to pay over the year   |
+| *Insured_zip*              | Insured number                                |
+| *Capital-gains*            | Profit on earns of the sales                  |
+| *Capital-loss*             | Loss incurred                                 |
+| *Incident_hour of the day*| Hour of the day incident occurred             |
+| *Total claim amount*      | Total Amount of claims                        |
+| *Injury claim*            | Amount of injury claims                       |
+| *Property claim*           | Amount of property claim                      |
+| *Vehicle claim*           | Amount of vehicle claim                       |
+| *Policy_state*             | State of policy holder                        |
+| *Policy_csl*               | Combined single limit of policy               |
+| *Policy_deductable*        | Amount of first pay                           |
+| *Insured_sex*              | Gender                                        |
+| *Insured_hobbies*          | Hobby of insured                              |
+| *Incident_type*            | Type of incident occurred                     |
+| *Collision_type*           | Type of damaged parts                         |
+| *Incident_severity*        | Type of severity damaged                      |
+| *Authorities contacted*    | Type of authorities has contacted on incident |
+| *Incident_state*           | State of incident                             |
+| *Incident_city*            | City of incident                              |
+| *Number of vehicle*        | Number of vehicle involved                    |
+| *Property damaged*         | Property damaged or not                       |
+| *Bodily injuries*         | Number of bodily injured                      |
+| *Witnesses*               | Number of witnesses                           |
+| *Auto_year*                | Year of auto model                            |
+| *Police_report*            | Available or not                              |
+| *Auto_make*                | Fabrication of Auto                           |
+| *Auto_model*               | Auto model                                    |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Data Preparation
 
 <p align=center>
 <img src="https://github.com/DandiMahendris/Auto-Insurance-Fraud-Detection/blob/main/pict/Preparetion%20Diagram.png"
   width=350 height=420>
 </p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Data Preprocessing and Feature Engineering
 
@@ -147,6 +183,8 @@ OrdinalEncoder(categories=[incident_type,witnesses,incident_severity,auto_year,
 Next, cat and num data is concatenated to normalize the data. normalization method uses `standardscaler` from sklearn package.
 
 This normalized data is concatenated with label(y) to be balanced using `SMOTE` and `Oversampling`. However, to capture benchmark of multiple ML models, we also use unbalanced dataset as **nonbalancing**.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Data Modelling
 
