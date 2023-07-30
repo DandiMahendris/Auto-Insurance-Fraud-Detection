@@ -13,10 +13,10 @@
   <li>
     <a href="#data-workflow">Data Workflow</a>
     <ul>
-      <li><a href='#dataset">Dataset</a></li>
+      <li><a href="#dataset">Dataset</a></li>
       <li><a href="#data-preparation">Data Preparation</a></li>
       <li><a href="#data-preprocessing-and-feature-engineering">Data Preprocessing and Feature Engineering</a></li>
-<li><a href="#data-modelling">Data Modelling</a></li>      
+      <li><a href="#data-modelling">Data Modelling</a></li>      
     </ul>
   </li>
   <li>
@@ -30,6 +30,13 @@
 
 <!-- About the Project -->
 ## About the Project
+
+<p align=left>
+<a href="https://medium.com/@dandi.mahendris/fraud-binary-classification-on-auto-insurance-claims-8ff402686a6f">
+  <img src="https://cdn.mos.cms.futurecdn.net/xJGh6cXvC69an86AdrLD98.jpg" width=100>
+</a>
+</p>
+
 ## Auto Insurance Fraud Detection
 
 <p align=center>
