@@ -182,13 +182,13 @@ Input Api uses json format like this:
   "injury_claim": int,
   "property_claim": int,
   "vehicle_claim": int,
-  "insured_hobbies": "str",
-  "incident_type": "str",
-  "collision_type": "str",
-  "incident_severity": "str",
-  "authorities_contacted": "str",
-  "incident_state": "str",
-  "property_damage": "str"
+  "insured_hobbies": str,
+  "incident_type": str,
+  "collision_type": str,
+  "incident_severity": str,
+  "authorities_contacted": str,
+  "incident_state": str,
+  "property_damage": str
 }
 ```
 
