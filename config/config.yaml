@@ -11,6 +11,17 @@ valid_set_path:
 test_set_path:
 - data/processed/x_test.pkl
 - data/processed/y_test.pkl
+
+train_set_eda:
+- data/processed/x_train_eda.pkl
+- data/processed/y_train_eda.pkl
+valid_set_eda:
+- data/processed/x_valid_eda.pkl
+- data/processed/y_valid_eda.pkl
+test_set_eda:
+- data/processed/x_test_eda.pkl
+- data/processed/y_test_eda.pkl
+
 train_set_clean:
 - data/processed/x_train_clean.pkl
 - data/processed/y_train_clean.pkl
@@ -21,11 +32,17 @@ test_set_clean:
 - data/processed/x_test_clean.pkl
 - data/processed/y_test_clean.pkl
 
-training_log_path: log/training_log.json
-production_model_path: models/production_model.pkl
-ohe_path: models/ohe_stasiun.pkl
+# -- Preprocessing Related -- #
+imputer_num: models/imputer_num.pkl
+imputer_cat: models/imputer_cat.pkl
+ohe_path: models/ohe_encoder.pkl
 le_path: models/le_encoder.pkl
 le_label_path : models/le_label.pkl
+scaler_path: models/scaler.pkl
+
+# -- Training Log Related -- #
+training_log_path: log/training_log.json
+production_model_path: models/production_model.pkl
 
 # Debug related
 print_debug: true
@@ -61,7 +78,6 @@ object_columns:
 - authorities_contacted
 - incident_state
 - incident_city
-- incident_location
 - number_of_vehicles_involved
 - property_damage
 - bodily_injuries
@@ -109,6 +125,7 @@ object_predictor:
 - auto_model
 
 label : fraud_reported
+
 predictor:
 - months_as_customer
 - age
@@ -318,7 +335,7 @@ collision_type:
 - 'Rear Collision'
 - 'Side Collision'
 - 'Front Collision'
-- '?'
+- 'UNKNOWN'
 incident_severity:
 - 'Minor Damage'
 - 'Total Loss'
@@ -329,7 +346,7 @@ authorities_contacted:
 - 'Fire'
 - 'Other'
 - 'Ambulance'
-- 'None'
+- 'UNKNOWN'
 incident_state:
 - 'NY'
 - 'SC'
@@ -347,11 +364,11 @@ incident_city:
 - 'Riverwood'
 - 'Northbrook'
 property_damage:
-- '?'
+- 'UNKNOWN'
 - 'NO'
 - 'YES'
 police_report_available:
-- '?'
+- 'UNKNOWN'
 - 'NO'
 - 'YES'
 auto_make:
@@ -414,3 +431,31 @@ auto_model:
 label_categories:
 - 'FRAUD'
 - 'TIDAK FRAUD'
+
+
+# EDA
+numeric_eda:
+- injury_claim
+- property_claim
+- vehicle_claim
+
+categoric_eda:
+- insured_hobbies
+- incident_type
+- collision_type
+- incident_severity
+- authorities_contacted
+- incident_state
+- property_damage
+
+eda_predictor:
+- injury_claim
+- property_claim
+- vehicle_claim
+- insured_hobbies
+- incident_type
+- collision_type
+- incident_severity
+- authorities_contacted
+- incident_state
+- property_damage
