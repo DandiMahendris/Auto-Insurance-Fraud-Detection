@@ -35,7 +35,7 @@
 ## Auto Insurance Fraud Detection
 
 <p align=center>
-<img src=https://blog.privy.id/wp-content/uploads/2022/11/shutterstock_720284965-1-300x173.jpg
+<img src="https://blog.privy.id/wp-content/uploads/2022/11/shutterstock_720284965-1-300x173.jpg"
   alt=Size Limit comment in pull request about bundle size changes
   width=550 height=320>
 </p>
