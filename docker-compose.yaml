@@ -1,0 +1,21 @@
+version: '3'
+services:
+  api:
+    build: docker/api
+    image: dandi/fraud_detection_api
+    container_name: api_backend
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/home/
+  streamlit:
+    build: docker/streamlit
+    image: dandi/fraud_detection_streamlit
+    container_name: streamlit_frontend
+    depends_on:
+      - api
+    ports:
+      - 8501:8501
+    volumes:
+      - ./:/home/
+  
