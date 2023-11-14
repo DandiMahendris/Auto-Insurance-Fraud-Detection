@@ -731,7 +731,7 @@ for index, model in enumerate(model_object):
 
 ### Fitting Baseline Model
 
-Top baseline model based on F1-score, recall and training time is shown below
+Top baseline model based on F1-score, recall and training time is shown below. The highest recall score is displayed by Gradient Boosting model with 0.88 and fitting training time 0.36s followed by Ada Boost and Random Forest with 0.853. The highest F1-Score is Gradient Boosting model with 0.879 followed by Ada Boost and Random Forest. The ensemble model including random forest and boosting that utilize the Tree-Based model concept is shown great performance for baseline model toward the dataset and smote technique in handling imbalance dataset increase the model performance as well in targeting the majority vote of targeted class. Let's boost the top 10 baseline model performance with hyperparameter tuning.
 
 <p align=center>
 <img src="pict/pics_readme/image-16.png" width=70%/>
@@ -739,7 +739,73 @@ Top baseline model based on F1-score, recall and training time is shown below
 
 ### Hyperparameter Tuning
 
+Utilize the **BayesSearchCV** to finding best **learning rate**, **n_estimator** and tree **max depth** parameter on Gradient Boosting. Unlike GridSearchCV, which explores all the combinations and is time-consuming, **BayesSearchCV** use stepwise optimization to efficiently navigate large hyperparameter spaces. This approach aims to discover the most promising hyperparameter values by minimizing the objective function.
 
+#### 1. Decision Tree
+
+Our initial effort to enhance model performance involved the use of a Decision Tree, employing the **Gini-index** as the criterion and setting the **maximum tree depth** to 4. This configuration yielded a commendable overall performance, with particular emphasize on recall to minimize false negatives. The achieved Area Under the Curve (AUC) Score standing at an impressive **0.88**, however the confusion matrix display the high number of false positives in order to emphasize on recall. 
+
+<p align=center>
+<img src="pict/pics_readme/image-21.png" width=60%/>
+</p>
+
+#### 2. Random Forest
+
+Random Forest on SMOTE configuration become the second enhance model performance, utilize the **entropy** criterion instead of *gini-index*, and **tree estimators** of 300, robust the model AUC Score performance into 0.90. However, the Confusion Matrix represent the larger number either of false negatives and false positives than previous model of decision tree. This model assume to randomize number of weak learner (decision tree) to robust the model performance, in order to minimize the objective function.
+
+<p align=center>
+<img src="pict/pics_readme/image-22.png" width=60%/>
+</p>
+
+#### 3. AdaBoost
+
+The previous tree-based model display good performance toward the model. In random forest, we got more higher AUC Score since utilize the number of tree estimator. Unlike the random forest, which utilize random number of weak learner, the Boosting method utilize the stepwise weak learner of tree to minimizing objective function by attempting to correct the errors made by the previous one. Boosting model builded by sequential of several weak learner of tree where each tree is adjusting its weight based on prior knowledge of accuracy. **Ada Boost** update the weight based on **the weakest side**, its increased the weigth to whether true class of false class.
+
+SMOTE configuration of Ada Boost model is employing the Decision Tree with tree maximum depth of 2 as its Base Estimator, including learning rate of 0.3 and number of tree estimator to 30. The outcome of this setup is noteworthy, with AUC Score reaching 0.89 with Confusion Matrix Display reveals a well-balanced distribution between false negatives and false positives rather than the previous model.
+
+<p align=center>
+<img src="pict/pics_readme/image-23.png" width=60%/>
+</p>
+
+#### 4. Gradient Boosting
+
+Unlike the Ada Boost, which updated the weight based on the weakest side, **Gradient Boost** update the weight based on **gradient of loss function with respect to the predicted output**. This is done in direction that reduces the loss, essentially moving towards the minimum of loss function. Hyperparameter tuning involves both oversampling and smote configuration for the gradient boosting model. In SMOTE configuration, with 30 tree estimators, the model demonstrates improved results in reducing false negatives, but it still yields a high number of false positives. On the other hand, the oversampling configuration, with a learning rate of 0.3, max depth of 4, and 70 tree estimators, achieves a better balance between false negative and false positive but falls short of an optimal solution.
+
+<p align=center>
+<img src="pict/pics_readme/image-18.png" width=70%/>
+</p>
+
+With **Area Under the Curve (AUC) Score**, which represent the curve area of the ratio between True Positive Rate (TPR) and False Positive Rate (FPR), it becomes evident that the SMOTE configuration outperforms the oversampling configuration. The AUC Score serves as a comprehensive measure of model performance, capturing the trade-off between true positives and false positives. The accompanying graph below clearly illustrate the distinction, with SMOTE configuration achieved an impressive AUC Score of 0.90. In contrast, the oversampling configuration lags behind, securing an AUC Score of 0.82.
+
+<p align=center>
+<img src="pict/pics_readme/image-19.png" width=60%/>
+</p>
+
+#### 5. XGBoost
+
+In contrast of previous boosting model, **XGBoost** uses more sophisticated approach, it adds a **regularization terms to the loss function**, and the update to the weights is made based on the **second-order derivative (Hessian)** of the loss function. This allows XGBoost to take into account not only the gradient but also the curvature of the loss function, potentially improving convergences. Futhermore, XGBoost uses **"tree-pruning"** during the tree-building process to prevent overfitting by pruning to remove branch of the tree that do not contribute significantly to the improvement.
+
+XGBoost parameter tuning display similar performance on Confusion Matrix Display by Oversampling method employing the gamma regularization parameter of 5, learning rate of 0.2, tree maximum depth of 5 and number of tree estimator to 7. In the other hand, SMOTE configuration is employing the same gamma regularization of 5, learning rate of 0.1, tree maximum depth of 4 and number of tree estimator to 10. XGBoost model on SMOTE configuration show the better result in reducing the false negatives return.
+
+<p align=center>
+<img src="pict/pics_readme/image-20.png" width=70%/>
+</p>
+
+#### Overall AUC Score
+
+AUC Score graph below demonstrates the overall score of all previous model, with the highest score of 0.89 gained by XGBoost on SMOTE configuration and the lower is 0.83 gained by Gradient Boost on Oversampling method.
+
+<p align=center>
+<img src="pict/pics_readme/image-24.png" width=60%/>
+</p>
+
+#### Overall Performance of Hyperparameter Models
+
+Based on Classification Report of each models, non hyperparameter Gradient Boosting model on SMOTE configuration represent as the best result of Recall Score with 0.88, F1-Score of 0.879 and the lower training time up to 0.383s followed by hyperparameter Gradient Boost on SMOTE configuration with similar outcome but higher training time up to 43s.
+
+<p align=center>
+<img src="pict/pics_readme/image-25.png" width=60%/>
+</p>
 
 <!-- Prediction Using API and Streamlit -->
 
