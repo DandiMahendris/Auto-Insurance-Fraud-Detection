@@ -385,7 +385,7 @@ As shown on EDA section above, to reduce multicollinerity we can drop either **`
 
 or the other three **(`injury_claim, property_claim, vehicle_claim`)**
 
-On univariate Analysis we conclude that the important features left are `insured_hobbies`, `incident_type`, `collision_type`, `incident_severity`, `authorities_contacted`, `incident_state`, `property_damage` which are Failed to Reject H<sub>0</sub> on Chi-squared Test, `total_claim_amount`, `injury_claim`, `property_claim`, `vehicle_claim` from Welch's Test and reduce the feature on numeric features into `total_claim_amount` only based on Pearson Correlation that mentioned above.
+On multivariate Analysis we conclude that the important features left are `insured_hobbies`, `incident_type`, `collision_type`, `incident_severity`, `authorities_contacted`, `incident_state`, `property_damage` which are Failed to Reject H<sub>0</sub> on Chi-squared Test, `total_claim_amount`, `injury_claim`, `property_claim`, `vehicle_claim` from Welch's Test and reduce the feature on numeric features into `total_claim_amount` only based on Pearson Correlation that mentioned above.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
